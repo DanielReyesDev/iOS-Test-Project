@@ -12,12 +12,15 @@ import UIKit
 final class ScrollMainView: UIView {
     
     //MARK: - Subviews declaration
-    lazy var contentScrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        return scrollView
-    }()
+    // TODO: - Try to use `let` instead of `lazy var` whenever is possible.
+    // Remember to use `lazy var` only when needed 😉
+//    lazy var contentScrollView: UIScrollView = {
+//        let scrollView = UIScrollView()
+//        return scrollView
+//    }()
+    private let contentScrollView = UIScrollView()
     
-    lazy var contentStackView: UIStackView = {
+    private let contentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -26,7 +29,8 @@ final class ScrollMainView: UIView {
         return stackView
     }()
     
-    lazy var titleLabel: UILabel = {
+    // Remember to use `lazy var` only when needed 😉
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Estos son unos perritos"
@@ -35,19 +39,22 @@ final class ScrollMainView: UIView {
         return label
     }()
     
-    lazy var imageView1: UIImageView = {
+    // Remember to use `lazy var` only when needed 😉
+    let imageView1: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .redraw
         return imageView
     }()
     
-    lazy var imageView2: UIImageView = {
+    // Remember to use `lazy var` only when needed 😉
+    let imageView2: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .redraw
         return imageView
     }()
     
-    lazy var imageView3: UIImageView = {
+    // Remember to use `lazy var` only when needed 😉
+    let imageView3: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         return imageView
@@ -61,6 +68,8 @@ final class ScrollMainView: UIView {
         self.setConstraints()
     }
     
+    // TODO: - Add @available(*, unavailable) to force the compiler to omit this `init` because we're using programatic views instead of storyboards. 😉
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -71,9 +80,12 @@ final class ScrollMainView: UIView {
 extension ScrollMainView: ConfigurableView {
     
     func setConstraints() {
-        self.contentScrollView.fillSuperviewSafeArea()
-        self.contentStackView.fillSuperview()
-        self.contentStackView.setConstaints(widthAnchor: self.widthAnchor)
+        // TODO: - Try to set the constraints manually without the extension just to practice! 😉
+        // You will be asked to do it by yourself without extensions
+        // Note: omit the overuseness of `self`
+        contentScrollView.fillSuperviewSafeArea()
+        contentStackView.fillSuperview()
+        contentStackView.setConstaints(widthAnchor: widthAnchor)
     }
     
     func addSubViews() {

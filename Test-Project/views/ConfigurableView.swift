@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-/*
- * This protocol must be implemented by all View
- * classes to keep function naming consistency.
- */
+// TODO: - When you try to document a class or a protocol try to use tripple slash instead 😉 `///` then you can CMD + Click to see the auto-generated documentation style
+
+/// This protocol must be implemented by all View
+/// classes to keep function naming consistency.
 protocol ConfigurableView {
     func addSubViews()
     func setConstraints()

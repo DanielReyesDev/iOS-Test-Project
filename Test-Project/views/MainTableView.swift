@@ -12,10 +12,13 @@ import UIKit
 final class MainTableView: UIView {
     
     //MARK: - Subviews declaration
-    lazy var tableView: UITableView = {
-        let tableView = UITableView()
-        return tableView
-    }()
+    // TODO: - Try to use `let` instead of `lazy var` whenever is possible.
+    // Remember to use `lazy var` only when needed 😉
+//    lazy var tableView: UITableView = {
+//        let tableView = UITableView()
+//        return tableView
+//    }()
+    let tableView = UITableView()
     
     //MARK: - Init
     convenience init() {
@@ -28,6 +31,8 @@ final class MainTableView: UIView {
         super.init(frame: frame)
     }
     
+    // TODO: - Add @available(*, unavailable) to force the compiler to omit this `init` because we're using programatic views instead of storyboards. 😉
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
